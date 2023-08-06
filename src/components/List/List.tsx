@@ -30,6 +30,8 @@ const List: ForwardRefExoticComponent<ListProps> & {
     );
 });
 
+List.displayName = 'List';
+
 List.Item = ListItem;
 
 export default List;

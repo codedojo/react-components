@@ -38,6 +38,8 @@ const Grid: GridFC = forwardRef(({
     );
 });
 
+Grid.displayName = 'Grid';
+
 Grid.Cell = GridCell;
 
 export default Grid;

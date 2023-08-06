@@ -57,4 +57,6 @@ const DrawerHeader = forwardRef<HTMLElement, DrawerHeaderProps>(({
     );
 });
 
+DrawerHeader.displayName = 'DrawerHeader';
+
 export default DrawerHeader;

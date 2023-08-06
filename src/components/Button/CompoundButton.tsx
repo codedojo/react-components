@@ -35,4 +35,6 @@ const CompoundButton = forwardRef<HTMLButtonElement, CompoundButtonProps>(({
     );
 });
 
+CompoundButton.displayName = 'CompoundButton';
+
 export default CompoundButton;

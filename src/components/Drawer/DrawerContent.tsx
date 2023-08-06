@@ -13,4 +13,6 @@ const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref
     );
 });
 
+DrawerContent.displayName = 'DrawerContent';
+
 export default DrawerContent;

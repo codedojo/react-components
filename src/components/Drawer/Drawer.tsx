@@ -43,6 +43,8 @@ const Drawer: ForwardRefExoticComponent<DrawerProps> & {
     );
 });
 
+Drawer.displayName = 'Drawer';
+
 Drawer.Content = DrawerContent;
 Drawer.Header = DrawerHeader;
 

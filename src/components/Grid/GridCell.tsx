@@ -55,4 +55,6 @@ const GridCell = forwardRef<HTMLDivElement, GridCellProps>(({
     );
 });
 
+GridCell.displayName = 'GridCell';
+
 export default GridCell;

@@ -46,4 +46,6 @@ const CircularProgress = forwardRef<HTMLDivElement, CircularProgressProps>(({
     );
 });
 
+CircularProgress.displayName = 'CircularProgress';
+
 export default CircularProgress;

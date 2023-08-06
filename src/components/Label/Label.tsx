@@ -22,4 +22,6 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(({
     );
 });
 
+Label.displayName = 'Label';
+
 export default Label;
