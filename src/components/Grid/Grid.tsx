@@ -17,7 +17,7 @@ type GridFC = ForwardRefExoticComponent<GridProps & RefAttributes<HTMLDivElement
     Cell?: FC<GridCellProps>;
 };
 
-const Grid: GridFC = forwardRef(({
+const Grid: GridFC = forwardRef<HTMLDivElement, GridProps>(({
     align,
     fixedColumnWidth = false,
 
