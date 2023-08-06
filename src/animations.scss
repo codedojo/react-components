@@ -1,0 +1,53 @@
+$deceleration-curve-timing-function: cubic-bezier(0, 0, 0.2, 1) !default;
+$standard-curve-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$acceleration-curve-timing-function: cubic-bezier(0.4, 0, 1, 1) !default;
+$sharp-curve-timing-function: cubic-bezier(0.4, 0, 0.6, 1) !default;
+
+@function enter($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $deceleration-curve-timing-function;
+}
+
+@function exit-permanent($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $acceleration-curve-timing-function;
+}
+
+@function exit-temporary($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $sharp-curve-timing-function;
+}
+
+@function standard($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay $standard-curve-timing-function;
+}
+
+@function linear($name, $duration, $delay: 0ms) {
+    @return $name $duration $delay linear;
+}
+
+@keyframes blink {
+    0% { opacity: 1 }
+    50% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+@keyframes drop	{
+    0%   { top: 5px;  opacity: 0; }
+    30%  { top: 10px; opacity: 1; }
+    100% { top: 25px; opacity: 0; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes card-fade-up {
+    0% {
+        opacity:0;
+        transform:translateY(20px)
+    }
+    
+    100% {
+        opacity:1;
+        transform:translatey(0)
+    }
+}
