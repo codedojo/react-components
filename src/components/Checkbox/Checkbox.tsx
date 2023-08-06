@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
-export type CheckboxProps = FluentCheckboxProps & {};
+export type CheckboxProps = FluentCheckboxProps;
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
     return (

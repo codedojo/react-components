@@ -7,7 +7,6 @@ import classnames from 'classnames';
 export type SwitchProps = FluentSwitchProps;
 
 export default function Switch({
-    onChange,
     className,
     ...props
 }: SwitchProps) {

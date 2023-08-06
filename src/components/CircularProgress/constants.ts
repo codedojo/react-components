@@ -6,7 +6,7 @@ export enum Size {
     Small = 'small',
     Medium = 'medium',
     Large = 'large'
-};
+}
 
 export const sizeProps = {
     large: {

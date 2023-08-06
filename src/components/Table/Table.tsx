@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import {
     Table as FluentTable,
     TableBody,
@@ -29,9 +29,9 @@ function Table({ className, ...props }: TableProps) {
 }
 
 export type TableCellProps = FluentTableCellProps & {
-    media?: any;
+    media?: TableCellLayoutProps['media'];
     content?: ReactNode;
-    actions?: any;
+    actions?: ReactElement | ReactElement[];
 
     children?: ReactNode | ReactNode[];
 };

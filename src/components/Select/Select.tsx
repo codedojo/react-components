@@ -1,4 +1,4 @@
-import { ChangeEvent as ReactChangeEvent, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Dropdown, type DropdownProps } from '@fluentui/react-components';
 import classnames from 'classnames';
 
