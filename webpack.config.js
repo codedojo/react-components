@@ -13,7 +13,8 @@ module.exports = (env, argv) => ({
             name: {
                 commonjs: '@codedojo/ui'
             }
-        }
+        },
+        globalObject: 'this'
     },
     module: {
         rules: [
