@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => ({
     name: 'lib',
@@ -68,6 +69,13 @@ module.exports = (env, argv) => ({
         }),
         new CssExtractPlugin({
             filename: 'index.css'
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve('./src/theme.scss')
+                }
+            ]
         })
     ],
     resolve: {
