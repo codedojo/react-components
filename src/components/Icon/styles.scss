@@ -1,0 +1,75 @@
+@use './variables';
+
+.ui-Icon {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    &.ui-Icon--outlined {
+        font-family: 'Material Symbols Outlined';
+    }
+
+    &.ui-Icon--rounded {
+        font-family: 'Material Symbols Rounded';
+    }
+
+    &.ui-Icon--sharp {
+        font-family: 'Material Symbols Sharp';
+    }
+
+    &.ui-Icon--smaller,
+    &.ui-Icon--16 {
+        font-size: variables.$smaller-size;
+        font-variation-settings: 'OPSZ' 16;
+    }
+
+    &.ui-Icon--small,
+    &.ui-Icon--18 {
+        font-size: variables.$small-size;
+        font-variation-settings: 'OPSZ' 18;
+    }
+
+    &.ui-Icon--medium,
+    &.ui-Icon--24 {
+        font-size: variables.$medium-size;
+        font-variation-settings: 'OPSZ' 24;
+    }
+
+    &.ui-Icon--large,
+    &.ui-Icon--36 {
+        font-size: variables.$large-size;
+        font-variation-settings: 'OPSZ' 36;
+    }
+
+    &.ui-Icon--larger,
+    &.ui-Icon--48 {
+        font-size: variables.$larger-size;
+        font-variation-settings: 'OPSZ' 48;
+    }
+
+    &.ui-Icon--dark {
+        color: variables.$dark-color;
+        font-variation-settings: 'GRAD' -25;
+    }
+
+    &.ui-Icon--dark.ui-Icon--inactive {
+        color: variables.$dark-inactive-color;
+        font-variation-settings: 'GRAD' -25;
+    }
+
+    &.ui-Icon--light {
+        color: variables.$light-color;
+    }
+
+    &.ui-Icon--light.mdc-icon--inactive {
+        color: variables.$light-inactive-color
+    }
+}

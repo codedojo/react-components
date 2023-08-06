@@ -1,0 +1,203 @@
+@use 'sass:color';
+@use 'sass:map';
+@use './functions';
+
+/* Font */
+$font-family: Montserrat, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", system-ui, -apple-system !default;
+$font-size: 1rem !default;
+$font-weights: (
+    'light': 300,
+    'normal': 400,
+    'semibold': 500,
+    'bold': 600
+) !default;
+$font-weight-light: map.get($font-weights, 'light');
+$font-weight-normal: map.get($font-weights, 'normal');
+$font-weight-semibold: map.get($font-weights, 'semibold');
+$font-weight-bold: map.get($font-weights, 'bold');
+
+/* Colors */
+$base-colors: (
+    'black': #1d1d21,
+    'white': #fff,
+    'gray': #78788a,
+    'red': #db4437,
+    'orange': #f4b400,
+    'yellow': yellow,
+    'green': #0f9d58,
+    'blue': #4285f4,
+    'purple': #ab47bc
+) !default;
+
+$black-color: map.get($base-colors, 'black');
+$white-color: map.get($base-colors, 'white');
+$gray-color: map.get($base-colors, 'gray');
+$red-color: map.get($base-colors, 'red');
+$orange-color: map.get($base-colors, 'orange');
+$yellow-color: map.get($base-colors, 'yellow');
+$green-color: map.get($base-colors, 'green');
+$blue-color: map.get($base-colors, 'blue');
+$purple-color: map.get($base-colors, 'purple');
+
+$black-rgb: functions.rgb($black-color);
+$white-rgb: functions.rgb($white-color);
+$gray-rgb: functions.rgb($gray-color);
+$red-rgb: functions.rgb($red-color);
+$orange-rgb: functions.rgb($orange-color);
+$yellow-rgb: functions.rgb($yellow-color);
+$green-rgb: functions.rgb($green-color);
+$blue-rgb: functions.rgb($blue-color);
+$purple-rgb: functions.rgb($purple-color);
+
+$base-colors-rgb: (
+    'black': $black-rgb,
+    'white': $white-rgb,
+    'gray': $gray-rgb,
+    'red': $red-rgb,
+    'orange': $orange-rgb,
+    'yellow': $yellow-rgb,
+    'green': $green-rgb,
+    'blue': $blue-rgb,
+    'purple': $purple-rgb
+);
+
+$theme-colors: (
+    'neutral': map.get($base-colors, 'gray'),
+    'primary': map.get($base-colors, 'blue'),
+    'secondary': map.get($base-colors, 'red'),
+    'male': map.get($base-colors, 'blue'),
+    'female': map.get($base-colors, 'red'),
+    'error': map.get($base-colors, 'red'),
+    'info': map.get($base-colors, 'purple'),
+    'success': map.get($base-colors, 'green'),
+    'warning': map.get($base-colors, 'orange')
+) !default;
+
+$neutral-color: map.get($theme-colors, 'neutral');
+$primary-color: map.get($theme-colors, 'primary');
+$secondary-color: map.get($theme-colors, 'secondary');
+$male-color: map.get($theme-colors, 'male');
+$female-color: map.get($theme-colors, 'female');
+$error-color: map.get($theme-colors, 'error');
+$info-color: map.get($theme-colors, 'info');
+$success-color: map.get($theme-colors, 'success');
+$warning-color: map.get($theme-colors, 'warning');
+
+$on-neutral-color: functions.on-color($neutral-color, $black-color, $white-color);
+$on-primary-color: functions.on-color($primary-color, $black-color, $white-color);
+$on-secondary-color: functions.on-color($secondary-color, $black-color, $white-color);
+$on-male-color: functions.on-color($male-color, $black-color, $white-color);
+$on-female-color: functions.on-color($female-color, $black-color, $white-color);
+$on-error-color: functions.on-color($error-color, $black-color, $white-color);
+$on-info-color: functions.on-color($info-color, $black-color, $white-color);
+$on-success-color: functions.on-color($success-color, $black-color, $white-color);
+$on-warning-color: functions.on-color($warning-color, $black-color, $white-color);
+
+$on-theme-colors: (
+    'neutral': $on-neutral-color,
+    'primary': $on-primary-color,
+    'secondary': $on-secondary-color,
+    'male': $on-male-color,
+    'female': $on-female-color,
+    'error': $on-error-color,
+    'info': $on-info-color,
+    'success': $on-success-color,
+    'warning': $on-warning-color
+);
+
+$neutral-state-colors: functions.state-colors($neutral-color);
+$primary-state-colors: functions.state-colors($primary-color);
+$secondary-state-colors: functions.state-colors($secondary-color);
+$male-state-colors: functions.state-colors($male-color);
+$female-state-colors: functions.state-colors($female-color);
+$error-state-colors: functions.state-colors($error-color);
+$info-state-colors: functions.state-colors($info-color);
+$success-state-colors: functions.state-colors($success-color);
+$warning-state-colors: functions.state-colors($warning-color);
+
+$on-neutral-state-colors: functions.state-colors($on-neutral-color);
+$on-primary-state-colors: functions.state-colors($on-primary-color);
+$on-secondary-state-colors: functions.state-colors($on-secondary-color);
+$on-male-state-colors: functions.state-colors($on-male-color);
+$on-female-state-colors: functions.state-colors($on-female-color);
+$on-error-state-colors: functions.state-colors($on-error-color);
+$on-info-state-colors: functions.state-colors($on-info-color);
+$on-success-state-colors: functions.state-colors($on-success-color);
+$on-warning-state-colors: functions.state-colors($on-warning-color);
+
+$palettes: (
+    'neutral': functions.color-pallette($neutral-color),
+    'primary': functions.color-pallette($primary-color),
+    'secondary': functions.color-pallette($secondary-color),
+    'male': functions.color-pallette($male-color),
+    'female': functions.color-pallette($female-color),
+    'error': functions.color-pallette($error-color),
+    'info': functions.color-pallette($info-color),
+    'success': functions.color-pallette($success-color),
+    'warning': functions.color-pallette($warning-color),
+
+    'on-neutral': functions.color-pallette($on-neutral-color),
+    'on-primary': functions.color-pallette($on-primary-color),
+    'on-secondary': functions.color-pallette($on-secondary-color),
+    'on-male': functions.color-pallette($on-male-color),
+    'on-female': functions.color-pallette($on-female-color),
+    'on-error': functions.color-pallette($on-error-color),
+    'on-info': functions.color-pallette($on-info-color),
+    'on-success': functions.color-pallette($on-success-color),
+    'on-warning': functions.color-pallette($on-warning-color)
+);
+
+$state-colors: (
+    'neutral': $neutral-state-colors,
+    'primary': $primary-state-colors,
+    'secondary': $secondary-state-colors,
+    'male': $male-state-colors,
+    'female': $female-state-colors,
+    'error': $error-state-colors,
+    'info': $info-state-colors,
+    'success': $success-state-colors,
+    'warning': $warning-state-colors,
+
+    'on-neutral': $on-neutral-state-colors,
+    'on-primary': $on-primary-state-colors,
+    'on-secondary': $on-secondary-state-colors,
+    'on-male': $on-male-state-colors,
+    'on-female': $on-female-state-colors,
+    'on-error': $on-error-state-colors,
+    'on-info': $on-info-state-colors,
+    'on-success': $on-success-state-colors,
+    'on-warning': $on-warning-state-colors,
+);
+
+$neutral-rgb: functions.rgb($neutral-color);
+$primary-rgb: functions.rgb($primary-color);
+$secondary-rgb: functions.rgb($secondary-color);
+$male-rgb: functions.rgb($male-color);
+$female-rgb: functions.rgb($female-color);
+$error-rgb: functions.rgb($error-color);
+$info-rgb: functions.rgb($info-color);
+$success-rgb: functions.rgb($success-color);
+$warning-rgb: functions.rgb($warning-color);
+
+$theme-colors-rgb: (
+    'neutral': $neutral-rgb,
+    'primary': $primary-rgb,
+    'secondary': $secondary-rgb,
+    'male': $male-rgb,
+    'female': $female-rgb,
+    'error': $error-rgb,
+    'info': $info-rgb,
+    'success': $success-rgb,
+    'warning': $warning-rgb
+);
+
+$background-color: map.get($base-colors, 'white');
+$border-color: #dfdfdf;
+$text-color: #313131;
+$text-muted-color: #6c757d;
+$surface-color: #f5f5f5;
+
+/* Misc */
+$palette-names: map.keys($theme-colors);
+$border-radius: 12px !default;
+$line-height: 1.5 !default;

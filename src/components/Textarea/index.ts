@@ -1,0 +1,1 @@
+export { default, default as Textarea, type TextareaProps } from './Textarea';

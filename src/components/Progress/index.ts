@@ -1,0 +1,1 @@
+export { default, default as Progress, type ProgressProps } from './Progress';

@@ -1,0 +1,128 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+}
+
+@function rem($px) {
+    @return strip-unit(math.div($px, 16px)) * 1rem;
+}
+
+@function rgb($color) {
+    @return color.red($color), color.green($color), color.blue($color);
+}
+
+@function _linear-channel-value($channel-value) {
+    $normalized-channel-value: math.div($channel-value, 255);
+
+    @if $normalized-channel-value < 0.03928 {
+        @return math.div($normalized-channel-value, 12.92);
+    }
+
+    @return math.pow(math.div($normalized-channel-value + 0.055, 1.055), 2.4);
+}
+  
+// Calculate the luminance for a color.
+// See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+@function luminance($color) {
+    $red: _linear-channel-value(color.red($color));
+    $green: _linear-channel-value(color.green($color));
+    $blue: _linear-channel-value(color.blue($color));
+  
+    @return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+}
+
+@function contrast($back, $front) {
+    $backLum: luminance($back) + 0.05;
+    $foreLum: luminance($front) + 0.05;
+  
+    @return math.div(math.max($backLum, $foreLum), math.min($backLum, $foreLum));
+}
+
+@function tone($color) {
+    @if $color == 'dark' or $color == 'light' {
+        @return $color;
+    }
+  
+    @if meta.type-of($color) != 'color' {
+        @warn '#{$color} is not a color. Falling back to "dark" tone.';
+        @return 'dark';
+    }
+  
+    $minimumContrast: 3.1;
+  
+    $lightContrast: contrast($color, white);
+    $darkContrast: contrast($color, rgba(black, 0.87));
+  
+    @if ($lightContrast < $minimumContrast) and ($darkContrast > $lightContrast) {
+        @return 'light';
+    } @else {
+        @return 'dark';
+    }
+}
+
+@function contrast-tone($color) {
+    @return if(tone($color) == 'dark', 'light', 'dark');
+}
+
+@function on-color($color, $dark-color, $light-color) {
+    @return if(contrast-tone($color) == 'dark', $dark-color, $light-color);
+}
+
+@function color-pallette($color) { 
+    @return (
+        0: color.scale($color, $lightness: 100%),
+        1: color.scale($color, $lightness: 80%),
+        2: color.scale($color, $lightness: 60%),
+        3: color.scale($color, $lightness: 40%),
+        4: color.scale($color, $lightness: 20%),
+        5: color.scale($color, $lightness: 0%),
+        6: color.scale($color, $lightness: -20%),
+        7: color.scale($color, $lightness: -40%),
+        8: color.scale($color, $lightness: -60%),
+        9: color.scale($color, $lightness: -80%)
+    );
+}
+
+@function on-color-pallette($color, $dark-color: #000, $light-color: #fff) {
+    @return (
+        0: on-color(color.scale($color, $lightness: 100%), $dark-color, $light-color),
+        1: on-color(color.scale($color, $lightness: 80%), $dark-color, $light-color),
+        2: on-color(color.scale($color, $lightness: 60%), $dark-color, $light-color),
+        3: on-color(color.scale($color, $lightness: 40%), $dark-color, $light-color),
+        4: on-color(color.scale($color, $lightness: 20%), $dark-color, $light-color),
+        5: on-color(color.scale($color, $lightness: 0%), $dark-color, $light-color),
+        6: on-color(color.scale($color, $lightness: -20%), $dark-color, $light-color),
+        7: on-color(color.scale($color, $lightness: -40%), $dark-color, $light-color),
+        8: on-color(color.scale($color, $lightness: -60%), $dark-color, $light-color),
+        9: on-color(color.scale($color, $lightness: -80%), $dark-color, $light-color)
+    );
+}
+
+@function state-colors($base-color, $override: ()) {
+    $hover-color: if(map.has-key($override, 'hover'),
+        map.get($override, 'hover'),
+        color.scale($base-color, $lightness: -5%)
+    );
+    $active-color: if(map.has-key($override, 'active'),
+        map.get($override, 'hover'),
+        color.scale($base-color, $lightness: -10%)
+    );
+    $disabled-color: if(map.has-key($override, 'disabled'),
+        map.get($override, 'hover'),
+        color.scale($base-color, $lightness: 50%)
+    );
+
+    @return (
+        'hover': $hover-color,
+        'active': $active-color,
+        'disabled': $disabled-color
+    );
+}

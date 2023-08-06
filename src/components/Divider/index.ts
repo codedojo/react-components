@@ -1,0 +1,1 @@
+export { default, default as Divider, type DividerProps } from './Divider';

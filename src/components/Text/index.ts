@@ -1,0 +1,1 @@
+export { default, default as Text, type TextProps } from './Text';

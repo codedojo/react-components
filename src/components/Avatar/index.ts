@@ -1,0 +1,1 @@
+export { default, default as Avatar, type AvatarProps } from './Avatar';

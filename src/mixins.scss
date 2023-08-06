@@ -1,0 +1,151 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:selector';
+@use './functions' as *;
+@use './variables' as *;
+
+@mixin combine-selectors($selector1, $selector2) {
+    &#{selector.unify(selector.nest(&, $selector1), selector.nest(&, $selector2))} {
+        @content;
+    }
+}
+
+@mixin variable($name, $value) {
+    --fui-#{$name}: #{$value};
+}
+
+@mixin css-variables {
+    // Font
+    --fui-font-family: #{$font-family};
+    --fui-font-size: #{$font-size};
+    --fui-font-weight-light: #{$font-weight-light};
+    --fui-font-weight-normal: #{$font-weight-normal};
+    --fui-font-weight-semibold: #{$font-weight-semibold};
+    --fui-font-weight-bold: #{$font-weight-bold};
+
+    // Colors
+    @each $name, $value in $base-colors {
+        --fui-#{$name}-color: #{$value};
+    }
+
+    @each $name, $value in $base-colors-rgb {
+        --fui-#{$name}-rgb: #{$value};
+    }
+
+    @each $name, $value in $theme-colors {
+        --fui-#{$name}-color: #{$value};
+    }
+
+    @each $name, $value in $on-theme-colors {
+        --fui-on-#{$name}-color: #{$value};
+    }
+
+    @each $name, $value in $theme-colors-rgb {
+        --fui-#{$name}-rgb: #{$value};
+    }
+
+    @each $name, $palette in $palettes {
+        @each $level, $color in $palette {
+            --fui-#{$name}-#{$level}-color: #{$color};
+        }
+    }
+
+    @each $name, $states in $state-colors {
+        @each $state, $color in $states {
+            --fui-#{$name}-#{$state}-color: #{$color};
+        }
+    }
+
+    --fui-background-color: #{$background-color};
+    --fui-surface-color: #{$surface-color};
+    --fui-text-color: #{$text-color};
+    --fui-text-muted-color: #{$text-muted-color};
+    --fui-border-color: #{$border-color};
+
+    // Misc
+    --fui-border-radius: #{$border-radius};
+    --fui-line-height: #{$line-height};
+}
+
+@mixin color-variable-for-palette($component, $name, $palette, $color: null, $on: false, $override: ()) {
+    $type-of-color: meta.type-of($color);
+    $prefix: if($on, 'on-', '');
+    $postfix: if($type-of-color == 'number', '-#{$color}', '');
+
+    &.#{$palette} {
+        @include variable(#{$component}-#{$name},
+            if($type-of-color == 'color' or $type-of-color == 'string',
+                $color,
+                var(--fui-#{$prefix}#{$palette}#{$postfix}-color)
+            )
+        );
+    }
+}
+
+@mixin color-variable-for-palettes($component, $name, $color: null, $on: false, $palettes: $palette-names, $override: ()) {
+    @each $palette in $palette-names {
+        @include color-variable-for-palette($component, $name, $palette, $color, $on, $override);
+    }
+}
+
+@mixin state-color-variables($component, $name, $color, $override: ()) {
+    @if meta.type-of($color) == 'color' {
+        $color: map.merge(('base': $color), state-colors($color));
+    } @else if (meta.type-of($color) == 'string') {
+        $color: (
+            'base': $color,
+            'hover': $color,
+            'active': $color,
+            'disabled': $color
+        );
+    }
+
+    $base-color: if(map.has-key($override, 'base'),
+        map.get($override, 'base'),
+        map.get($color, 'base')
+    );
+    $hover-color: if(map.has-key($override, 'hover'),
+        map.get($override, 'hover'),
+        map.get($color, 'hover')
+    );
+    $active-color: if(map.has-key($override, 'active'),
+        map.get($override, 'hover'),
+        map.get($color, 'active')
+    );
+    $disabled-color: if(map.has-key($override, 'disabled'),
+        map.get($override, 'hover'),
+        map.get($color, 'disabled')
+    );
+
+    @include variable(#{$component}-#{$name}, $base-color);
+    @include variable(#{$component}-hover-#{$name}, $hover-color);
+    @include variable(#{$component}-active-#{$name}, $active-color);
+    @include variable(#{$component}-disabled-#{$name}, $disabled-color);
+}
+
+@mixin state-color-variables-for-palette($component, $name, $palette, $color: null, $on: false, $override: ()) {
+    $type-of-color: meta.type-of($color);
+
+    &.#{$palette} {
+        @if $color == null {
+            $prefix: if($on, 'on-', '');
+
+            @include state-color-variables($component, $name, (
+                'base': var(--fui-#{$prefix}#{$palette}-color),
+                'hover': var(--fui-#{$prefix}#{$palette}-hover-color),
+                'active': var(--fui-#{$prefix}#{$palette}-active-color),
+                'disabled': var(--fui-#{$prefix}#{$palette}-disabled-color)
+            ), $override);
+        } @else if $type-of-color == 'number' {
+            @include state-color-variables($component, $name, map.get($palettes, $palette, $color), $override);
+        } @else if $type-of-color == 'string' {
+            @include state-color-variables($component, $name, $color, $override);
+        }
+    }
+}
+
+@mixin state-color-variables-for-palettes($component, $name, $color: null, $on: false, $palettes: $palette-names, $override: ()) {
+    @each $palette in $palette-names {
+        @include state-color-variables-for-palette($component, $name, $palette, $color, $on, $override);
+    }
+}

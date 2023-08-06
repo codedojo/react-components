@@ -1,0 +1,1 @@
+export { default, default as Badge, type BadgeProps } from './Badge';
