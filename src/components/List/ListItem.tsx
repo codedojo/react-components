@@ -11,9 +11,10 @@ import classnames from 'classnames';
 
 import Icon from '../Icon';
 
-export type ListItemProps = Omit<TreeItemProps, 'as' | 'itemType'> & Omit<TreeItemLayoutProps, 'as'> & Omit<TreeItemPersonaLayoutProps, 'as'> & {
+export type ListItemProps = Omit<TreeItemProps, 'as' | 'itemType' | 'content'> & Omit<TreeItemLayoutProps, 'as'> & Omit<TreeItemPersonaLayoutProps, 'as'> & {
     as?: string | React.FunctionComponent;
     itemType?: TreeItemProps['itemType'];
+    content?: string | ReactElement;
     icon?: string | ReactElement;
     main?: string | ReactElement;
     aside?: string | ReactElement;
