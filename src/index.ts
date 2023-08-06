@@ -1,3 +1,4 @@
+export { RendererProvider, SSRProvider, createDOMRenderer, renderToStyleElements } from '@fluentui/react-components';
 export * from './theme';
 export * from './components/Accordion';
 export * from './components/Alert';
