@@ -88,12 +88,14 @@ module.exports = (env, argv) => ({
         'react': {
             root: 'React',
             commonjs: 'react',
-            commonjs2: 'react'
+            commonjs2: 'react',
+            module: 'react'
         },
         'react-dom': {
             root: 'ReactDOM',
             commonjs: 'react-dom',
-            commonjs2: 'react-dom'
+            commonjs2: 'react-dom',
+            module: 'react-dom'
         }
     }
 });
