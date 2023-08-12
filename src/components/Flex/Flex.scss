@@ -1,0 +1,109 @@
+.fui-Flex {
+    display: flex;
+}
+
+// Dir
+
+.fui-Flex--row {
+    flex-direction: row;
+}
+
+.fui-Flex--row-reverse {
+    flex-direction: row-reverse;
+}
+
+.fui-Flex--column {
+    flex-direction: column;
+}
+
+.fui-Flex--column-reverse {
+    flex-direction: column-reverse;
+}
+
+
+// Align
+
+.fui-Flex--align-start {
+    align-items: flex-start;
+}
+
+.fui-Flex--align-center {
+    align-items: center;
+}
+
+.fui-Flex--align-end {
+    align-items: flex-end;
+}
+
+
+// Justify
+
+.fui-Flex--justify-start {
+    justify-content: flex-start;
+}
+
+.fui-Flex--justify-center {
+    justify-content: center;
+}
+
+.fui-Flex--justify-end {
+    justify-content: flex-end;
+}
+
+.fui-Flex--justify-around {
+    justify-content: space-around;
+}
+
+.fui-Flex--justify-between {
+    justify-content: space-between;
+}
+
+.fui-Flex--justify-evenly {
+    justify-content: space-evenly;
+}
+
+
+// Gap
+
+.fui-Flex--gap-smallest {
+    gap: .25rem;
+}
+
+.fui-Flex--gap-smaller {
+    gap: .5rem;
+}
+
+.fui-Flex--gap-small {
+    gap: .75rem;
+}
+
+.fui-Flex--gap-medium {
+    gap: 1rem;
+}
+
+.fui-Flex--gap-large {
+    gap: 1.25rem;
+}
+
+.fui-Flex--gap-larger {
+    gap: 1.5rem;
+}
+
+.fui-Flex--gap-largest {
+    gap: 1.75rem;
+}
+
+.fui-Flex--gap-none {
+    gap: 0;
+}
+
+
+// Misc
+
+.fui-Flex--inline {
+    display: inline-flex;
+}
+
+.fui-Flex--wrap {
+    flex-wrap: wrap;
+}

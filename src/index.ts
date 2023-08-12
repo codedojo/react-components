@@ -12,6 +12,7 @@ export * from './components/Divider';
 export * from './components/Drawer';
 export * from './components/Card';
 export * from './components/Field';
+export * from './components/Flex';
 export * from './components/Grid';
 export * from './components/Heading';
 export * from './components/Icon';
