@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
     MenuButton as FluentMenuButton,
     MenuButtonProps as FluentMenuButtonProps,
@@ -6,12 +5,11 @@ import {
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
+import type { ButtonProps } from '../Button';
 import Icon from '../Icon/Icon';
 import Menu, { MenuProps } from '../Menu/Menu';
 
-export type MenuButtonProps = Omit<FluentMenuButtonProps, 'content'> & {
-    content?: ReactNode;
-    icon?: ReactNode;
+export type MenuButtonProps = ButtonProps & Pick<FluentMenuButtonProps, 'menuIcon'> & {
     items?: MenuItemProps[];
     menu?: MenuProps;
 };
@@ -29,12 +27,11 @@ export default function MenuButton({
     return (
         <Menu
             trigger={
+                // @ts-ignore Type 'HTMLButtonElement' is missing the following properties from type 'HTMLAnchorElement'
                 <FluentMenuButton
                     className={classnames(className, 'ui-MenuButton')}
                     icon={typeof icon === 'string' ?
-                        <Icon name={icon} />
-                        :
-                        icon
+                        <Icon name={icon} /> : undefined
                     }
                     {...props}
                 >
