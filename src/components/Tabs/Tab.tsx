@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import Icon from '../Icon/Icon';
 
-export type TabProps = FluentTabProps & {
+export type TabProps = Omit<FluentTabProps, 'content'> & {
     content?: ReactNode;
     icon?: ReactNode;
 };

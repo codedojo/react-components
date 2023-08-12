@@ -9,14 +9,11 @@ import classnames from 'classnames';
 import Icon from '../Icon/Icon';
 import Menu, { MenuProps } from '../Menu/Menu';
 
-export type MenuButtonProps = FluentMenuButtonProps & {
+export type MenuButtonProps = Omit<FluentMenuButtonProps, 'content'> & {
     content?: ReactNode;
     icon?: ReactNode;
     items?: MenuItemProps[];
     menu?: MenuProps;
-
-    className?: string;
-    children?: ReactNode | ReactNode[];
 };
 
 export default function MenuButton({

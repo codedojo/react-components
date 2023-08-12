@@ -1,18 +1,15 @@
+import type { ReactNode } from 'react';
 import {
     Alert as FluentAlert,
     type AlertProps as FluentAlertProps
 } from '@fluentui/react-components/unstable';
 import classnames from 'classnames';
-import { ReactNode } from 'react';
 
 import Icon from '../Icon/Icon';
 
-export type AlertProps = FluentAlertProps & {
-    icon?: ReactNode;
+export type AlertProps = Omit<FluentAlertProps, 'content'> & {
     content?: ReactNode;
-
-    className?: string;
-    children?: ReactNode | ReactNode[];
+    icon?: ReactNode;
 };
 
 export default function Alert({

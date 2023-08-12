@@ -1,4 +1,4 @@
-import { ReactNode, ReactElement, forwardRef } from 'react';
+import { type ReactNode, forwardRef } from 'react';
 import {
     Button as FluentButton,
     type ButtonProps as FluentButtonProps
@@ -7,12 +7,13 @@ import classnames from 'classnames';
 
 import Icon from '../Icon';
 
-export type ButtonProps = FluentButtonProps & {
+export type ButtonProps = Omit<FluentButtonProps, 'content'> & {
     content?: ReactNode;
-    icon?: string | ReactElement;
+    icon?: ReactNode;
 };
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
+
+const Button = forwardRef<HTMLButtonElement & HTMLAnchorElement, ButtonProps>(({
     content,
     icon,
     size,

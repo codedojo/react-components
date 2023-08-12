@@ -1,13 +1,13 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import {
     Badge as FluentBadge,
-    type BadgeProps as FluentBadgeProps
+    BadgeProps as FluentBadgeProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
 import Icon from '../Icon/Icon';
 
-export type BadgeProps = FluentBadgeProps & {
+export type BadgeProps = Omit<FluentBadgeProps, 'content'> & {
     content?: ReactNode;
     icon?: ReactNode;
 };

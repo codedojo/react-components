@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import {
     AccordionHeader as FluentAccordionHeader,
     type AccordionHeaderProps as FluentAccordionHeaderProps
@@ -7,12 +7,9 @@ import classnames from 'classnames';
 
 import Icon from '../Icon/Icon';
 
-export type AccordionHeaderProps = FluentAccordionHeaderProps & {
+export type AccordionHeaderProps = Omit<FluentAccordionHeaderProps, 'content'> & {
     content?: ReactNode;
     icon?: ReactNode;
-
-    className?: string;
-    children?: ReactNode;
 };
 
 export default function AccordionHeader({

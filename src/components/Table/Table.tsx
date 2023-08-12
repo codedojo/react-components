@@ -28,12 +28,10 @@ function Table({ className, ...props }: TableProps) {
     );
 }
 
-export type TableCellProps = FluentTableCellProps & {
+export type TableCellProps = Omit<FluentTableCellProps, 'content'> & {
     media?: TableCellLayoutProps['media'];
     content?: ReactNode;
     actions?: ReactElement | ReactElement[];
-
-    children?: ReactNode | ReactNode[];
 };
 
 function TableCell({

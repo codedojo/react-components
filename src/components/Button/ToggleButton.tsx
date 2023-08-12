@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { type ReactNode, forwardRef } from 'react';
 import {
     ToggleButton as FluentToggleButton,
     type ToggleButtonProps as FluentToggleButtonProps
@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import Icon from '../Icon';
 
-export type ToggleButtonProps = FluentToggleButtonProps & {
+export type ToggleButtonProps = Omit<FluentToggleButtonProps, 'content'> & {
     content?: ReactNode;
 };
 

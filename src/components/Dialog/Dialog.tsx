@@ -11,7 +11,7 @@ import {
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
-export type DialogProps = Omit<FluentDialogProps, 'children'> & {
+export type DialogProps = Omit<FluentDialogProps, 'content' | 'children'> & {
     trigger?: ReactElement;
     title?: ReactNode;
     content?: ReactNode;

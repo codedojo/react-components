@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import DrawerContent, { type DrawerContentProps } from './DrawerContent';
 import DrawerHeader, { type DrawerHeaderProps } from './DrawerHeader';
 
-export type DrawerProps = FluentDrawerProps & {
+export type DrawerProps = Omit<FluentDrawerProps, 'content'> & {
     title?: ReactNode;
     content?: ReactNode;
     onClose?: () => void;
@@ -31,7 +31,7 @@ const Drawer: ForwardRefExoticComponent<DrawerProps> & {
     return (
         <FluentDrawer ref={ref} className={classNames} {...props}>
             {title &&
-                <DrawerHeader title={title} />
+                <DrawerHeader title={title} onCloseIconClick={onClose} />
             }
 
             {content &&

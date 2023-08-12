@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
-export type OptionProps = Omit<FluentOptionProps, 'text'> & {
+export type OptionProps = Omit<FluentOptionProps, 'content' | 'text'> & {
     content?: ReactNode;
     text?: string;
 };
