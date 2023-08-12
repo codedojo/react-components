@@ -1,17 +1,14 @@
 {
-  "sourceType": "unambiguous",
   "presets": [
+    "@babel/preset-env",
     [
-      "@babel/preset-env",
+      "@babel/preset-react",
       {
-        "targets": {
-          "chrome": 100
-        }
+        "runtime": "automatic"
       }
     ],
     "@babel/preset-typescript",
-    "@babel/preset-react",
-    "@emotion/babel-preset-css-prop"
+    "@griffel"
   ],
   "plugins": []
 }
