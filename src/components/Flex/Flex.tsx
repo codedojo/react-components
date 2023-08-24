@@ -1,9 +1,9 @@
-import { forwardRef } from 'react';
+import { FC, ForwardRefExoticComponent, RefAttributes, forwardRef } from 'react';
 
 import type { HTMLDivProps, PropsWithChildren } from '@/types';
 import { classnames as cn } from '@/utils';
 
-import './Flex.scss';
+import FlexItem, { FlexItemProps } from './FlexItem';
 
 export type FlexProps = PropsWithChildren<{
     as?: 'div';
@@ -15,7 +15,11 @@ export type FlexProps = PropsWithChildren<{
     wrap?: boolean;
 }, HTMLDivProps>;
 
-const Flex = forwardRef<HTMLDivElement, FlexProps>(({
+type FlexFC = ForwardRefExoticComponent<FlexProps & RefAttributes<HTMLDivElement>> & {
+    Item?: FC<FlexItemProps>;
+};
+
+const Flex: FlexFC = forwardRef<HTMLDivElement, FlexProps>(({
     dir = 'row',
     align,
     justify,
@@ -42,5 +46,7 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(({
 });
 
 Flex.displayName = 'Flex';
+
+Flex.Item = FlexItem;
 
 export default Flex;
