@@ -29,9 +29,9 @@ const Flex = forwardRef<HTMLDivElement, FlexProps>(({
 }, ref) => {
     const classNames = cn(className, 'fui-Flex', {
         [`fui-Flex--${dir}`]: dir,
-        [`fui-Flex--${align}`]: align,
-        [`fui-Flex--${justify}`]: justify,
-        [`fui-Flex--${gap}`]: gap,
+        [`fui-Flex--align-${align}`]: align,
+        [`fui-Flex--justify-${justify}`]: justify,
+        [`fui-Flex--gap-${gap}`]: gap,
         'fui-Flex--inline': inline,
         'fui-Flex--wrap': wrap
     });
