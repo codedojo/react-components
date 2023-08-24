@@ -1,0 +1,69 @@
+@use 'sass:map';
+@use './variables';
+@use './mixins';
+
+:root {
+    @each $size in map.keys(variables.$columns) {
+        --ui-Grid-margin-#{$size}: #{map.get(
+            variables.$default-margin,
+            $size
+        )};
+        --ui-Grid-gutter-#{$size}: #{map.get(
+            variables.$default-gutter,
+            $size
+        )};
+        --ui-Grid-column-width-#{$size}: #{map.get(
+            variables.$column-width,
+            $size
+        )};
+    }
+}
+
+// postcss-bem-linter: define layout-grid
+.ui-Grid {
+    @each $size in map.keys(variables.$columns) {
+        @include mixins.media-query_($size) {
+            $margin: map.get(variables.$default-margin, $size);
+
+            @include mixins.layout-grid($size, $margin, variables.$max-width);
+        }
+    }
+
+    &--align-left {
+        margin-right: auto;
+        margin-left: 0;
+    }
+    
+    &--align-right {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+.ui-Grid__inner {
+    @each $size in map.keys(variables.$columns) {
+        @include mixins.media-query_($size) {
+            $margin: map.get(variables.$default-margin, $size);
+            $gutter: map.get(variables.$default-gutter, $size);
+
+            @include mixins.inner($size, $margin, $gutter);
+        }
+    }
+}
+
+.ui-Grid--fixed-column-width {
+    @each $size in map.keys(variables.$columns) {
+        @include mixins.media-query_($size) {
+            $margin: map.get(variables.$default-margin, $size);
+            $gutter: map.get(variables.$default-gutter, $size);
+            $column-width: map.get(variables.$column-width, $size);
+
+            @include mixins.fixed-column-width(
+                $size,
+                $margin,
+                $gutter,
+                $column-width
+            );
+        }
+    }
+}

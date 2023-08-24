@@ -3,7 +3,7 @@
 /// four-color mixin is applied.
 /// @param {Color} $color - The desired stroke color.
 @mixin color($color) {
-    .ui-circular-progress__circle {
+    .ui-Circular-progress__circle {
         stroke: $color;
     }
 }
@@ -12,7 +12,7 @@
 /// determinate variant only.
 /// @param {Color} $color - The desired track color.
 @mixin track-color($color) {
-    .ui-circular-progress__track {
+    .ui-Circular-progress__track {
         stroke: $color;
     }
 }
