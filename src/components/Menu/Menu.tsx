@@ -1,15 +1,15 @@
 import { ReactElement, ReactNode } from 'react';
 import {
     Menu as FluentMenu,
-    type MenuProps as FluentMenuProps,
+    MenuProps as FluentMenuProps,
     MenuTrigger,
     MenuPopover,
-    MenuList,
-    MenuItem,
-    MenuItemProps
+    MenuList
 } from '@fluentui/react-components';
 
 import Icon from '../Icon';
+
+import MenuItem, { MenuItemProps } from './MenuItem';
 
 export type MenuProps = Omit<FluentMenuProps, 'children'> & {
     trigger?: ReactElement;
@@ -49,3 +49,5 @@ export default function Menu({
         </FluentMenu>
     );
 }
+
+Menu.Item = MenuItem;

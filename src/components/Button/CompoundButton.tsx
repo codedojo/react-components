@@ -1,15 +1,16 @@
-import { ReactNode, forwardRef } from 'react';
+import { type ReactElement, type ReactNode, forwardRef } from 'react';
 import {
-    CompoundButton as FluentCompoundButton,
-    type CompoundButtonProps as FluentCompoundButtonProps
+    CompoundButton as FluentCompoundButton
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
 import Icon from '../Icon';
 
-export type CompoundButtonProps = FluentCompoundButtonProps & {
-    content?: ReactNode;
+import type { ButtonProps } from './Button';
+
+export type CompoundButtonProps = ButtonProps & {
     primaryContent?: ReactNode;
+    secondaryContent?: string | ReactElement;
 };
 
 const CompoundButton = forwardRef<HTMLButtonElement, CompoundButtonProps>(({
@@ -26,7 +27,7 @@ const CompoundButton = forwardRef<HTMLButtonElement, CompoundButtonProps>(({
             ref={ref}
             className={classnames(className, 'ui-CompoundButton')}
             icon={typeof icon === 'string' ?
-                <Icon name={icon} /> : icon
+                <Icon name={icon} /> : undefined
             }
             {...props}
         >

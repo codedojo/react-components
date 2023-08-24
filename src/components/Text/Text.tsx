@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import {
     Text as FluentText,
     type TextProps as FluentTextProps,
@@ -44,16 +44,17 @@ const ElementsByType: Record<string, FluentTextProps['as']> = {
     'caption2': 'span'
 };
 
-export type TextProps = FluentTextProps & {
+export type TextProps = Omit<FluentTextProps, 'type' | 'content'> & {
     type?: 'display' | 'title1' | 'title2' | 'title3' | 'title4' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption1' | 'caption2';
-    content?: string;
+    content?: ReactNode;
 };
 
 export default function Text({
     type = 'body2',
     content,
-    className,
+
     children = content,
+    className,
     ...props
 }: TextProps) {
     const Component = ComponentsByType[type] || FluentText;

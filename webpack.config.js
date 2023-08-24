@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CssExtractPlugin = require('mini-css-extract-plugin');
+const { GriffelCSSExtractionPlugin } = require('@griffel/webpack-extraction-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => ({
@@ -20,16 +21,26 @@ module.exports = (env, argv) => ({
     module: {
         rules: [
             {
+                test: /\.(js|ts|tsx)$/,
+                // Apply "exclude" only if your dependencies **do not use** Griffel
+                // exclude: /node_modules/,
+                use: {
+                    loader: GriffelCSSExtractionPlugin.loader,
+                },
+            },
+            {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: 'ts-loader'
+                use: {
+                    loader: 'babel-loader'
+                }
             },
             {
                 test: /\.(s*)css$/,
                 use: [
                     CssExtractPlugin.loader,
                     {
-                        loader: 'css-loader',
+                        loader: 'css-loader'
                     },
                     {
                         loader: 'sass-loader'
@@ -67,6 +78,7 @@ module.exports = (env, argv) => ({
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(argv.mode),
         }),
+        new GriffelCSSExtractionPlugin(),
         new CssExtractPlugin({
             filename: 'index.css'
         }),
@@ -76,6 +88,9 @@ module.exports = (env, argv) => ({
                     from: path.resolve('./src/theme.scss')
                 }
             ]
+        }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1
         })
     ],
     resolve: {
@@ -88,12 +103,14 @@ module.exports = (env, argv) => ({
         'react': {
             root: 'React',
             commonjs: 'react',
-            commonjs2: 'react'
+            commonjs2: 'react',
+            module: 'react'
         },
         'react-dom': {
             root: 'ReactDOM',
             commonjs: 'react-dom',
-            commonjs2: 'react-dom'
+            commonjs2: 'react-dom',
+            module: 'react-dom'
         }
     }
 });

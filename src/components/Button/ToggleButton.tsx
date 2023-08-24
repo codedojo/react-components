@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import {
     ToggleButton as FluentToggleButton,
     type ToggleButtonProps as FluentToggleButtonProps
@@ -7,9 +7,9 @@ import classnames from 'classnames';
 
 import Icon from '../Icon';
 
-export type ToggleButtonProps = FluentToggleButtonProps & {
-    content?: ReactNode;
-};
+import type { ButtonProps } from './Button';
+
+export type ToggleButtonProps = ButtonProps & Pick<FluentToggleButtonProps, 'defaultChecked' | 'checked'>;
 
 const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(({
     icon,
@@ -24,7 +24,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(({
             ref={ref}
             className={classnames(className, 'ui-ToggleButton')}
             icon={typeof icon === 'string' ?
-                <Icon name={icon} /> : icon
+                <Icon name={icon} /> : undefined
             }
             {...props}
         >
