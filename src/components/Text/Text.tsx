@@ -11,6 +11,7 @@ import {
     Subtitle1,
     Subtitle2,
     Body1,
+    Body2,
     Caption1,
     Caption2
 } from '@fluentui/react-components';
@@ -24,8 +25,8 @@ const ComponentsByType: Record<string, FC<TextPresetProps>> = {
     'title4': Title3,
     'subtitle1': Subtitle1,
     'subtitle2': Subtitle2,
-    'body': Body1,
     'body1': Body1,
+    'body2': Body2,
     'caption1': Caption1,
     'caption2': Caption2
 };
