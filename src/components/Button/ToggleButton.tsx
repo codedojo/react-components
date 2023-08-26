@@ -14,6 +14,7 @@ export type ToggleButtonProps = ButtonProps & Pick<FluentToggleButtonProps, 'def
 const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(({
     icon,
     content,
+    size,
 
     children = content,
     className,
@@ -24,7 +25,7 @@ const ToggleButton = forwardRef<HTMLButtonElement, ToggleButtonProps>(({
             ref={ref}
             className={classnames(className, 'ui-ToggleButton')}
             icon={typeof icon === 'string' ?
-                <Icon name={icon} /> : undefined
+                <Icon name={icon} size={size} /> : icon
             }
             {...props}
         >

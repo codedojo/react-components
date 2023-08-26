@@ -17,6 +17,7 @@ const CompoundButton = forwardRef<HTMLButtonElement, CompoundButtonProps>(({
     icon,
     content,
     primaryContent = content,
+    size,
 
     children = primaryContent,
     className,
@@ -27,7 +28,7 @@ const CompoundButton = forwardRef<HTMLButtonElement, CompoundButtonProps>(({
             ref={ref}
             className={classnames(className, 'ui-CompoundButton')}
             icon={typeof icon === 'string' ?
-                <Icon name={icon} /> : undefined
+                <Icon name={icon} size={size} /> : icon
             }
             {...props}
         >

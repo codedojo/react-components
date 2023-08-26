@@ -1,4 +1,4 @@
-import { type ReactNode, forwardRef } from 'react';
+import { type ReactNode, forwardRef, ReactElement } from 'react';
 import {
     Button as FluentButton,
     type ButtonProps as FluentButtonProps
@@ -18,7 +18,7 @@ export type ButtonProps = PropsWithChildren<
         'size'
     > & {
         content?: ReactNode;
-        icon?: ReactNode;
+        icon?: string | ReactElement;
     },
     HTMLButtonProps & HTMLAnchorProps
 >;
@@ -37,7 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
             ref={ref}
             className={classnames(className, 'ui-Button')}
             icon={typeof icon === 'string' ?
-                <Icon name={icon} size={children ? 'small' : undefined} /> : undefined
+                <Icon name={icon} size={size} /> : icon
             }
             size={size}
             {...props}
