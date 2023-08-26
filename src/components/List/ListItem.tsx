@@ -38,7 +38,7 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps>(({
     active,
 
     className,
-    children = content,
+    children,
     ...props
 }, ref) => {
     const classNames = classnames('ui-ListItem', {
