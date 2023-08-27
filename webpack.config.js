@@ -85,7 +85,11 @@ module.exports = (env, argv) => ({
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.resolve('./src/theme.scss')
+                    from: path.resolve('./node_modules/@fluentui/react-theme-sass/sass'),
+                    to: path.resolve('./dist/sass')
+                },
+                {
+                    from: path.resolve('./src/index.scss')
                 }
             ]
         }),
