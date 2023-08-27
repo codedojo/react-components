@@ -38,6 +38,9 @@ export type HeadingProps = Omit<FluentTextProps, 'type' | 'content'> & {
 
 export default function Heading({
     type = 'title2',
+    content,
+
+    children = content,
     className,
     ...props
 }: HeadingProps) {
@@ -50,6 +53,8 @@ export default function Heading({
             className={classNames}
             block
             {...props}
-        />
+        >
+            {children}
+        </Component>
     );
 }
