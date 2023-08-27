@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import {
     type TextProps as FluentTextProps,
     Display,
@@ -31,11 +31,16 @@ const ElementsByType: Record<string, FluentTextProps['as']> = {
     'subtitle2': 'h6'
 };
 
-export type HeadingProps = FluentTextProps & {
+export type HeadingProps = Omit<FluentTextProps, 'type' | 'content'> & {
     type?: 'display' | 'title1' | 'title2' | 'title3' | 'title4' | 'subtitle1' | 'subtitle2';
+    content?: ReactNode;
 };
 
-export default function Heading({ type = 'title2', className, ...props }: HeadingProps) {
+export default function Heading({
+    type = 'title2',
+    className,
+    ...props
+}: HeadingProps) {
     const Component = ComponentsByType[type];
     const classNames = classnames(className, 'ui-Heading');
 
