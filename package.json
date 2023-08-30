@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@fluentui/react-breadcrumb-preview": "^0.3.5",
     "@fluentui/react-components": "^9.30.0",
     "@fluentui/react-theme-sass": "^9.0.0-alpha.15",
     "@types/react-transition-group": "^4.4.6",
