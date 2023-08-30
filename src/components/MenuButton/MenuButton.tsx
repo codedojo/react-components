@@ -27,7 +27,6 @@ export default function MenuButton({
     return (
         <Menu
             trigger={
-                // @ts-ignore Type 'HTMLButtonElement' is missing the following properties from type 'HTMLAnchorElement'
                 <FluentMenuButton
                     className={classnames(className, 'ui-MenuButton')}
                     icon={typeof icon === 'string' ?
