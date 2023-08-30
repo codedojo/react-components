@@ -11,6 +11,7 @@ import Icon from '../Icon';
 
 export type ButtonProps = PropsWithChildren<
     Pick<FluentButtonProps,
+        'as' |
         'appearance' |
         'disabledFocusable' |
         'iconPosition' |
@@ -23,7 +24,7 @@ export type ButtonProps = PropsWithChildren<
     HTMLButtonProps & HTMLAnchorProps
 >;
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({
     content,
     icon,
     size,
