@@ -37,28 +37,26 @@ export default function Toolbar({
             className={classnames(className, 'ui-Toolbar')}
             {...props}
         >
-
-            {// @ts-ignore
-                buttons?.map(({ key, icon, toggle, ...props }: ToolbarToggleButtonProps) =>
-                    toggle ?
-                        // @ts-ignore
-                        <ToolbarToggleButton
-                            key={key}
-                            icon={typeof icon === 'string' ?
-                                <Icon name={icon} /> : icon
-                            }
-                            {...props}
-                        />
-                        :
-                        // @ts-ignore
-                        <ToolbarButton
-                            key={key}
-                            icon={typeof icon === 'string' ?
-                                <Icon name={icon} /> : icon
-                            }
-                            {...props as ToolbarButtonProps}
-                        />
-                )}
+            {buttons?.map(({ key, icon, ...props }: ToolbarButtonProps | ToolbarToggleButtonProps) =>
+                (props as ToolbarToggleButtonProps).toggle ?
+                    // @ts-ignore
+                    <ToolbarToggleButton
+                        key={key}
+                        icon={typeof icon === 'string' ?
+                            <Icon name={icon} /> : icon
+                        }
+                        {...props as ToolbarToggleButtonProps}
+                    />
+                    :
+                    // @ts-ignore
+                    <ToolbarButton
+                        key={key}
+                        icon={typeof icon === 'string' ?
+                            <Icon name={icon} /> : icon
+                        }
+                        {...props as ToolbarButtonProps}
+                    />
+            )}
             {children}
         </FluentToolbar>
     );
