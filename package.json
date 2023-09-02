@@ -25,6 +25,7 @@
   "dependencies": {
     "@fluentui/react-breadcrumb-preview": "^0.3.5",
     "@fluentui/react-components": "^9.30.1",
+    "@fluentui/react-tags-preview": "^0.2.5",
     "@fluentui/react-theme-sass": "^9.0.0-alpha.15",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
