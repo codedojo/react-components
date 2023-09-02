@@ -1,7 +1,7 @@
 import { FC, ForwardRefExoticComponent, RefAttributes, forwardRef } from 'react';
 
-import type { HTMLDivProps, PropsWithChildren } from '@/types';
-import { classnames as cn } from '@/utils';
+import type { HTMLDivProps, PropsWithChildren } from '../../types';
+import { classnames as cn } from '../../utils';
 
 import FlexItem, { FlexItemProps } from './FlexItem';
 

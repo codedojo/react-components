@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
-import type { HTMLDivProps, PropsWithChildren } from '@/types';
-import { classnames as cn } from '@/utils';
+import type { HTMLDivProps, PropsWithChildren } from '../../types';
+import { classnames as cn } from '../../utils';
 
 export type FlexItemProps = PropsWithChildren<{
     as?: 'div';

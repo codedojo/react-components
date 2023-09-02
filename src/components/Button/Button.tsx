@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
-import type { PropsWithChildren, HTMLButtonProps, HTMLAnchorProps } from '@/types';
+import type { PropsWithChildren, HTMLButtonProps, HTMLAnchorProps } from '../../types';
 
 import Icon from '../Icon';
 

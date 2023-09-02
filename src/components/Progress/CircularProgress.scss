@@ -1,6 +1,11 @@
 @use '../../animations';
-@use './variables';
-@use './mixins';
+@use '../../variables' as global;
+
+$color: global.$colorCompoundBrandBackground !default;
+$track-color: global.$colorNeutralBackground6 !default;
+$size-small: 24px;
+$size-medium: 32px;
+$size-large: 48px;
 
 .ui-CircularProgress {
     display: inline-flex;
@@ -20,24 +25,26 @@
     }
 
     &__circle {
+        stroke: $color;
         transition: animations.enter(stroke-dashoffset, 500ms);
     }
 
+    &__track {
+        stroke: $color;
+    }
+
     &--small {
-        width: variables.$size-small;
-        height: variables.$size-small;
+        width: $size-small;
+        height: $size-small;
     }
 
     &--medium {
-        width: variables.$size-medium;
-        height: variables.$size-medium;
+        width: $size-medium;
+        height: $size-medium;
     }
 
     &--large {
-        width: variables.$size-large;
-        height: variables.$size-large;
+        width: $size-large;
+        height: $size-large;
     }
 }
-
-@include mixins.color(variables.$color);
-@include mixins.track-color(variables.$track-color);

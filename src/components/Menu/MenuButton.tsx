@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import type { ButtonProps } from '../Button';
 import Icon from '../Icon/Icon';
-import Menu, { MenuProps } from '../Menu/Menu';
+import Menu, { MenuProps } from './Menu';
 
 export type MenuButtonProps = ButtonProps & Pick<FluentMenuButtonProps, 'menuIcon'> & {
     items?: MenuItemProps[];

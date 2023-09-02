@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import {
     Checkbox as FluentCheckbox,
-    type CheckboxProps as FluentCheckboxProps
+    CheckboxProps as FluentCheckboxProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

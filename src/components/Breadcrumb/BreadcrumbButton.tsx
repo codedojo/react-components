@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react-breadcrumb-preview';
 import classnames from 'classnames';
 
-import type { HTMLButtonProps, HTMLAnchorProps, PropsWithChildren } from '@/types';
+import type { HTMLButtonProps, HTMLAnchorProps, PropsWithChildren } from '../../types';
 
 export type BreadcrumbButtonProps = PropsWithChildren<
     Pick<FluentBreadcrumbButtonProps,

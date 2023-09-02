@@ -5,8 +5,8 @@ import {
 } from '@fluentui/react-components/unstable';
 import classnames from 'classnames';
 
-import DrawerContent, { type DrawerContentProps } from './DrawerContent';
-import DrawerHeader, { type DrawerHeaderProps } from './DrawerHeader';
+import DrawerContent from './DrawerContent';
+import DrawerHeader from './DrawerHeader';
 
 export type DrawerProps = Omit<FluentDrawerProps, 'content'> & {
     title?: ReactNode;
@@ -15,8 +15,8 @@ export type DrawerProps = Omit<FluentDrawerProps, 'content'> & {
 };
 
 const Drawer: ForwardRefExoticComponent<DrawerProps> & {
-    Content?: ForwardRefExoticComponent<DrawerContentProps>;
-    Header?: ForwardRefExoticComponent<DrawerHeaderProps>;
+    Content?: typeof DrawerContent;
+    Header?: typeof DrawerHeader;
 } = forwardRef<HTMLDivElement, DrawerProps>(({
     title,
     content,

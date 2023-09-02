@@ -5,7 +5,7 @@ import {
 } from '@fluentui/react-breadcrumb-preview';
 import classnames from 'classnames';
 
-import type { PropsWithChildren } from '@/types';
+import type { PropsWithChildren } from '../../types';
 
 export type BreadcrumbItemProps = PropsWithChildren<Omit<FluentBreadcrumbItemProps, 'content' | 'icon'> & {
     content?: ReactNode;

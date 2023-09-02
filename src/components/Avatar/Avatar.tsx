@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
     Avatar as FluentAvatar,
-    type AvatarProps as FluentAvatarProps
+    AvatarProps as FluentAvatarProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
