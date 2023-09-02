@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 
 import { Heading, ThemeProvider, lightTheme } from './lib';
 
-import Buttons from './pages/buttons';
+import Buttons from './pages/button';
+import Tags from './pages/tag';
+import Toast from './pages/toast';
 
 import '../dist/index.css';
 
@@ -13,8 +15,10 @@ const root = createRoot(
 
 root.render(
     <ThemeProvider theme={lightTheme}>
-        <Heading>CodeDojo UI</Heading>
+        <Heading type="title1">CodeDojo UI</Heading>
 
         <Buttons />
+        <Tags />
+        <Toast />
     </ThemeProvider>
 );
