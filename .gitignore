@@ -1,3 +1,6 @@
 .vscode/
+demo/*.css
+demo/*.js
+demo/*.txt
 dist/
 node_modules/
