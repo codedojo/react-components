@@ -1,6 +1,3 @@
 .vscode/
-.idea/
-demo/
 dist/
-docs/dist/
 node_modules/
