@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from 'react';
 import {
     Dialog as FluentDialog,
-    type DialogProps as FluentDialogProps,
+    DialogProps as FluentDialogProps,
     DialogActions,
     DialogBody,
     DialogContent,
@@ -28,7 +28,7 @@ function Dialog({
     content,
     actions,
 
-    children = content,
+    children,
     className,
     ...props
 }: DialogProps) {
@@ -46,31 +46,31 @@ function Dialog({
                         <DialogTitle>{title}</DialogTitle>
                     }
 
-                    {children &&
-                        <DialogContent>{children}</DialogContent>
+                    {content &&
+                        <DialogContent>{content}</DialogContent>
                     }
 
                     {actions &&
                         <DialogActions>
-                            {actions?.map((action, index) =>
-                                <DialogTrigger key={index}>
-                                    {action}
-                                </DialogTrigger>
-                            )}
+                            {actions}
                         </DialogActions>
                     }
+
+                    {children}
                 </DialogBody>
             </DialogSurface>
         </FluentDialog>
     );
 }
 
-Dialog.Trigger = DialogTrigger;
+Dialog.displayName = 'Dialog';
+
 Dialog.Actions = DialogActions;
 Dialog.Body = DialogBody;
 Dialog.Content = DialogContent;
 Dialog.Surface = DialogSurface;
 Dialog.Title = DialogTitle;
+Dialog.Trigger = DialogTrigger;
 
 export {
     Dialog as default,
