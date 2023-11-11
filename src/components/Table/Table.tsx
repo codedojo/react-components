@@ -1,21 +1,21 @@
 import { ReactElement, ReactNode } from 'react';
 import {
     Table as FluentTable,
-    TableProps,
+    type TableProps,
     TableBody,
-    TableBodyProps,
+    type TableBodyProps,
     TableCell as FluentTableCell,
-    TableCellProps as FluentTableCellProps,
+    type TableCellProps as FluentTableCellProps,
     TableCellActions,
-    TableCellActionsProps,
+    type TableCellActionsProps,
     TableCellLayout,
-    TableCellLayoutProps,
+    type TableCellLayoutProps,
     TableHeader,
-    TableHeaderProps,
+    type TableHeaderProps,
     TableHeaderCell,
-    TableHeaderCellProps,
+    type TableHeaderCellProps,
     TableRow,
-    TableRowProps
+    type TableRowProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
