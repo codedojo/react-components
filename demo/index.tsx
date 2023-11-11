@@ -14,7 +14,7 @@ const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
     <ThemeProvider theme={lightTheme}>
-        <Heading type="title1">CodeDojo UI</Heading>
+        <Heading type="title1">CodeDojo React Components</Heading>
 
         <Buttons />
         <Dialog />
