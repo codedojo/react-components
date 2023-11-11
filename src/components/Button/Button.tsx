@@ -1,7 +1,7 @@
-import { type ReactNode, forwardRef, ReactElement } from 'react';
+import { ReactNode, forwardRef, ReactElement } from 'react';
 import {
     Button as FluentButton,
-    type ButtonProps as FluentButtonProps
+    ButtonProps as FluentButtonProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

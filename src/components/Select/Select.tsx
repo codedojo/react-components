@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import type { ChangeEvent, ChangeEventData, SelectionEvents } from '../../types';
 
-import Option, { type OptionProps } from './Option';
+import Option, { OptionProps } from './Option';
 
 type OptionOnSelectData = {
     optionValue: string | undefined;

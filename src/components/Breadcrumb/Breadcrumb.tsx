@@ -1,4 +1,4 @@
-import { type ForwardRefExoticComponent, forwardRef } from 'react';
+import { ForwardRefExoticComponent, forwardRef } from 'react';
 import {
     Breadcrumb as FluentBreadcrumb,
     BreadcrumbProps as FluentBreadcrumbProps
@@ -10,7 +10,6 @@ import type { PropsWithChildren } from '../../types';
 import BreadcrumbButton from './BreadcrumbButton';
 import BreadcrumbDivider from './BreadcrumbDivider';
 import BreadcrumbItem, { BreadcrumbItemProps } from './BreadcrumbItem';
-import BreadcrumbLink from './BreadcrumbLink';
 
 export type BreadcrumbProps = PropsWithChildren<FluentBreadcrumbProps & {
     items?: BreadcrumbItemProps[];
@@ -20,7 +19,6 @@ const Breadcrumb: ForwardRefExoticComponent<BreadcrumbProps> & {
     Button?: typeof BreadcrumbButton;
     Divider?: typeof BreadcrumbDivider;
     Item?: typeof BreadcrumbItem;
-    Link?: typeof BreadcrumbLink;
 } = forwardRef<HTMLElement, BreadcrumbProps>(({
     items,
     size,
@@ -49,6 +47,5 @@ Breadcrumb.displayName = 'Breadcrumb';
 Breadcrumb.Button = BreadcrumbButton;
 Breadcrumb.Divider = BreadcrumbDivider;
 Breadcrumb.Item = BreadcrumbItem;
-Breadcrumb.Link = BreadcrumbLink;
 
 export default Breadcrumb;

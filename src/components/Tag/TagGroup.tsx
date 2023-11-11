@@ -1,4 +1,4 @@
-import { type KeyboardEvent, type MouseEvent, useCallback } from 'react';
+import { KeyboardEvent, MouseEvent, useCallback } from 'react';
 import {
     TagGroup as FluentTabGroup,
     TagGroupProps as FluentTagGroupProps,

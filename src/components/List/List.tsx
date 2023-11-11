@@ -1,8 +1,8 @@
 import { ForwardRefExoticComponent, forwardRef } from 'react';
-import { Tree, type TreeProps } from '@fluentui/react-components/unstable';
+import { Tree, TreeProps } from '@fluentui/react-components/unstable';
 import classnames from 'classnames';
 
-import ListItem, { type ListItemProps } from './ListItem';
+import ListItem, {  ListItemProps } from './ListItem';
 
 export type ListProps = TreeProps & {
     items?: ListItemProps[];

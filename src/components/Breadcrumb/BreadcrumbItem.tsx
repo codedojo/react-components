@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode, forwardRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import {
     BreadcrumbItem as FluentBreadcrumbItem,
     BreadcrumbItemProps as FluentBreadcrumbItemProps
@@ -9,14 +9,10 @@ import type { PropsWithChildren } from '../../types';
 
 export type BreadcrumbItemProps = PropsWithChildren<Omit<FluentBreadcrumbItemProps, 'content' | 'icon'> & {
     content?: ReactNode;
-    icon?: string | ReactElement;
 }>;
-
-import Icon from '../Icon';
 
 const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
     content,
-    icon,
     size,
 
     children = content,
@@ -27,9 +23,6 @@ const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(({
         <FluentBreadcrumbItem
             ref={ref}
             className={classnames(className, 'ui-BreadcrumbItem')}
-            icon={typeof icon === 'string' ?
-                <Icon name={icon} size={size} /> : icon
-            }
             size={size}
             {...props}
         >

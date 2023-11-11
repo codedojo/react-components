@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode, forwardRef } from 'react';
+import { ReactElement, ReactNode, forwardRef } from 'react';
 import {
     CompoundButton as FluentCompoundButton
 } from '@fluentui/react-components';

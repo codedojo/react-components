@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode, forwardRef } from 'react';
+import { ReactElement, ReactNode, forwardRef } from 'react';
 import {
     BreadcrumbButton as FluentBreadcrumbButton,
     BreadcrumbButtonProps as FluentBreadcrumbButtonProps
