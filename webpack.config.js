@@ -24,10 +24,18 @@ module.exports = (env, argv) => [
                 {
                     test: /\.(js|ts|tsx)$/,
                     // Apply "exclude" only if your dependencies **do not use** Griffel
-                    exclude: /node_modules/,
+                    // exclude: /node_modules/,
                     use: {
                         loader: GriffelCSSExtractionPlugin.loader,
                     },
+                },
+                // Add "@griffel/webpack-loader" if you use Griffel directly in your project
+                {
+                    test: /\.(ts|tsx)$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: '@griffel/webpack-loader',
+                    }
                 },
                 {
                     test: /\.tsx?$/,
