@@ -14,7 +14,7 @@ module.exports = (env, argv) => [
             library: {
                 type: 'umd',
                 name: {
-                    commonjs: '@codedojo/ui'
+                    commonjs: '@codedojo/react-components'
                 }
             },
             globalObject: 'this'
