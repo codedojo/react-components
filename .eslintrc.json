@@ -29,10 +29,6 @@
                 "MemberExpression": 1
             }
         ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
         "quotes": [
             "error",
             "single"
@@ -43,5 +39,7 @@
         ],
         "@typescript-eslint/ban-ts-comment": "off"
     },
-    "ignorePatterns": ["**/*.js"]
+    "ignorePatterns": [
+        "**/*.js"
+    ]
 }
