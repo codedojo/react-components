@@ -4,10 +4,19 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "moduleResolution": "nodenext",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
