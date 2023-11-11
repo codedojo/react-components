@@ -1,11 +1,11 @@
-import { type ReactElement, forwardRef } from 'react';
+import { ReactElement, forwardRef } from 'react';
 import {
     TreeItem,
     TreeItemLayout,
     TreeItemPersonaLayout,
-    type TreeItemProps,
-    type TreeItemLayoutProps,
-    type TreeItemPersonaLayoutProps
+    TreeItemProps,
+    TreeItemLayoutProps,
+    TreeItemPersonaLayoutProps
 } from '@fluentui/react-components/unstable';
 import classnames from 'classnames';
 

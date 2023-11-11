@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import {
     Input as FluentInput,
-    type InputProps as FluentInputProps
+    InputProps as FluentInputProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

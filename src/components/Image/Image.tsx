@@ -1,6 +1,6 @@
 import {
     Image as FluentImage,
-    type ImageProps as FluentImageProps
+    ImageProps as FluentImageProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

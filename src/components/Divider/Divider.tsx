@@ -1,6 +1,6 @@
 import {
     Divider as FluentDivider,
-    type DividerProps as FluentDividerProps
+    DividerProps as FluentDividerProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

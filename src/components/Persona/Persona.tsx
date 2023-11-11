@@ -1,6 +1,6 @@
 import {
     Persona as FluentPersona,
-    type PersonaProps as FluentPersonaProps
+    PersonaProps as FluentPersonaProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

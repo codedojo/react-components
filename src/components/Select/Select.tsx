@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Dropdown, type DropdownProps } from '@fluentui/react-components';
+import { Dropdown, DropdownProps } from '@fluentui/react-components';
 import classnames from 'classnames';
 
 import type { ChangeEvent, ChangeEventData, SelectionEvents } from '../../types';

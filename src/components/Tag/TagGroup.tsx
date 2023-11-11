@@ -1,11 +1,12 @@
 import { type KeyboardEvent, type MouseEvent, useCallback } from 'react';
 import {
     TagGroup as FluentTabGroup,
-    TagGroupProps as FluentTagGroupProps
-} from '@fluentui/react-tags-preview';
+    TagGroupProps as FluentTagGroupProps,
+    TagDismissHandler
+} from '@fluentui/react-components';
 import classnames from 'classnames';
 
-import Tag, { type TagProps } from './Tag';
+import Tag, { TagProps } from './Tag';
 
 export type TagGroupProps = Omit<FluentTagGroupProps, 'onDismiss'> & {
     tags?: TagProps[];
@@ -20,11 +21,8 @@ export default function TagGroup({
     children,
     ...props
 }: TagGroupProps) {
-    const handleDismiss = useCallback((
-        event: MouseEvent | KeyboardEvent,
-        data: { dismissedTagValue: string; }
-    ) => {
-        onDismiss?.(data.dismissedTagValue, event);
+    const handleDismiss = useCallback<TagDismissHandler>((event, data) => {
+        onDismiss?.(data.value, event);
     }, [onDismiss]);
 
     return (

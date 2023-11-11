@@ -1,8 +1,8 @@
 import {
     Popover as FluentPopover,
+    PopoverProps as FluentPopoverProps,
     PopoverTrigger,
-    PopoverSurface,
-    type PopoverProps as FluentPopoverProps
+    PopoverSurface
 } from '@fluentui/react-components';
 
 export type PopoverProps = FluentPopoverProps;

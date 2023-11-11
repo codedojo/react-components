@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import { ReactElement } from 'react';
 import {
     MenuItem as FluentMenuItem,
     MenuItemProps as FluentMenuItemProps

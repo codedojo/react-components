@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
 import {
     TabList as FluentTabList,
-    type TabListProps as FluentTabListProps,
-    type SelectTabData,
-    type SelectTabEvent,
-    type SelectTabEventHandler
+    TabListProps as FluentTabListProps,
+    SelectTabData,
+    SelectTabEvent,
+    SelectTabEventHandler
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
-import Tab, { type TabProps } from './Tab';
+import Tab, { TabProps } from './Tab';
 
 export type TabsProps = Omit<FluentTabListProps, 'value' | 'onChange'> & {
     value?: unknown;

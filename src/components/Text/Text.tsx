@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 import {
     Text as FluentText,
-    type TextProps as FluentTextProps,
-    type TextPresetProps,
+    TextProps as FluentTextProps,
+    TextPresetProps,
     Display,
     LargeTitle,
     Title1,

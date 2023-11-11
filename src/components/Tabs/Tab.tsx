@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
     Tab as FluentTab,
-    type TabProps as FluentTabProps
+    TabProps as FluentTabProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

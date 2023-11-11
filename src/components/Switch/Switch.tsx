@@ -1,6 +1,6 @@
 import {
     Switch as FluentSwitch,
-    type SwitchProps as FluentSwitchProps,
+    SwitchProps as FluentSwitchProps,
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

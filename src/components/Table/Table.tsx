@@ -1,21 +1,21 @@
 import { ReactElement, ReactNode } from 'react';
 import {
     Table as FluentTable,
+    TableProps,
     TableBody,
+    TableBodyProps,
     TableCell as FluentTableCell,
+    TableCellProps as FluentTableCellProps,
     TableCellActions,
+    TableCellActionsProps,
     TableCellLayout,
+    TableCellLayoutProps,
     TableHeader,
+    TableHeaderProps,
     TableHeaderCell,
+    TableHeaderCellProps,
     TableRow,
-    type TableProps,
-    type TableBodyProps,
-    type TableCellProps as FluentTableCellProps,
-    type TableCellActionsProps,
-    type TableCellLayoutProps,
-    type TableHeaderProps,
-    type TableHeaderCellProps,
-    type TableRowProps
+    TableRowProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
@@ -65,18 +65,18 @@ Table.CellLayout = TableCellLayout;
 export {
     Table as default,
     Table,
-    TableProps,
+    type TableProps,
     TableHeader,
-    TableHeaderProps,
+    type TableHeaderProps,
     TableHeaderCell,
-    TableHeaderCellProps,
+    type TableHeaderCellProps,
     TableBody,
-    TableBodyProps,
+    type TableBodyProps,
     TableRow,
-    TableRowProps,
+    type TableRowProps,
     TableCell,
     TableCellActions,
-    TableCellActionsProps,
+    type TableCellActionsProps,
     TableCellLayout,
-    TableCellLayoutProps
+    type TableCellLayoutProps
 };

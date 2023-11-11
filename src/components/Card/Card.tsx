@@ -1,10 +1,10 @@
 import { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import {
     Card as FluentCard,
-    type CardProps as FluentCardProps,
+    CardProps as FluentCardProps,
     CardFooter,
     CardHeader as FluentCardHeader,
-    type CardHeaderProps as FluentCardHeaderProps,
+    CardHeaderProps as FluentCardHeaderProps,
     CardPreview
 } from '@fluentui/react-components';
 import classnames from 'classnames';

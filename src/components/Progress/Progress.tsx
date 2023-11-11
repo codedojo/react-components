@@ -1,6 +1,6 @@
 import {
     ProgressBar as FluentProgressBar,
-    type ProgressBarProps as FluentProgressBarProps
+    ProgressBarProps as FluentProgressBarProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

@@ -1,6 +1,6 @@
 import {
     Spinner as FluentSpinner,
-    type SpinnerProps as FluentSpinnerProps
+    SpinnerProps as FluentSpinnerProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

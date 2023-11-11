@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import {
     Link as FluentLink,
-    type LinkProps as FluentLinkProps
+    LinkProps as FluentLinkProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

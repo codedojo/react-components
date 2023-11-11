@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import {
     Option as FluentOption,
-    type OptionProps as FluentOptionProps,
+    OptionProps as FluentOptionProps,
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

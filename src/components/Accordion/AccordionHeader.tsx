@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import {
     AccordionHeader as FluentAccordionHeader,
-    type AccordionHeaderProps as FluentAccordionHeaderProps
+    AccordionHeaderProps as FluentAccordionHeaderProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

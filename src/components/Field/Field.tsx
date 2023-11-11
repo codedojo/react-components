@@ -1,6 +1,6 @@
 import {
     Field as FluentField,
-    type FieldProps as FluentFieldProps
+    FieldProps as FluentFieldProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

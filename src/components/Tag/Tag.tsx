@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import {
     Tag as FluentTag,
     TagProps as FluentTagProps
-} from '@fluentui/react-tags-preview';
+} from '@fluentui/react-components';
 import classnames from 'classnames';
 
 import Icon, { IconProps } from '../Icon/Icon';

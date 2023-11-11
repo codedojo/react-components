@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import {
     Alert as FluentAlert,
-    type AlertProps as FluentAlertProps
+    AlertProps as FluentAlertProps
 } from '@fluentui/react-components/unstable';
 import classnames from 'classnames';
 

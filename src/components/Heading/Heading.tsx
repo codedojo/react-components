@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import {
-    type TextProps as FluentTextProps,
+    TextProps as FluentTextProps,
     Display,
     LargeTitle,
     Title1,

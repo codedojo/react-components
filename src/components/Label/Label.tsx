@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import {
     Label as FluentLabel,
-    type LabelProps as FluentLabelProps
+    LabelProps as FluentLabelProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

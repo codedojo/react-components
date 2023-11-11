@@ -3,7 +3,7 @@ import {
     Accordion as FluentAccordion,
     AccordionItem,
     AccordionPanel,
-    type AccordionProps as FluentAccordionProps
+    AccordionProps as FluentAccordionProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 

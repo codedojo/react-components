@@ -8,11 +8,7 @@ import classnames from 'classnames';
 import type { HTMLButtonProps, HTMLAnchorProps, PropsWithChildren } from '../../types';
 
 export type BreadcrumbButtonProps = PropsWithChildren<
-    Pick<FluentBreadcrumbButtonProps,
-        'appearance' |
-        'current' |
-        'size'
-    > & {
+    Pick<FluentBreadcrumbButtonProps, 'current' | 'size'> & {
         content?: ReactNode;
         icon?: string | ReactElement;
     },

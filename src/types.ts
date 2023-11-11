@@ -12,9 +12,10 @@ export interface AsProp<As extends React.ElementType = React.ElementType> {
 
 export type Props<CustomProps = object, BuiltinProps = HTMLProps> = Merge<CustomProps, BuiltinProps>;
 
-export type PropsWithChildren<CustomProps = object, BuiltinProps = HTMLProps> = Merge<Props<CustomProps, BuiltinProps>, {
-    children?: Children;
-}>;
+export type PropsWithChildren<CustomProps = object, BuiltinProps = HTMLProps> =
+    Merge<Props<CustomProps, BuiltinProps>, {
+        children?: Children;
+    }>;
 
 export interface ChangeEvent<T extends Element = HTMLElement> {
     target: {

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import {
     Textarea as FluentTextarea,
-    type TextareaProps as FluentTextareaProps
+    TextareaProps as FluentTextareaProps
 } from '@fluentui/react-components';
 import classnames from 'classnames';
 
