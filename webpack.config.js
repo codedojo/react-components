@@ -167,7 +167,7 @@ module.exports = (env, argv) => [
         resolve: {
             extensions: ['.js', '.jsx', '.ts', '.tsx'],
             alias: {
-                '@codedojo/ui': path.resolve(__dirname, 'dist/')
+                '@codedojo/react-components': path.resolve(__dirname, 'dist/')
             }
         }
     }
